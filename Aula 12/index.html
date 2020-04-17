@@ -1,0 +1,70 @@
+<!DOCTYPE> 
+<HTML lang="pt-br">
+<HEAD>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,">
+	<meta http-equiv="x-UA-Compatible" content="ie=">
+	<title>Aula 12 - exercício </title>
+</HEAD>
+
+<BODY>
+	<h1>Exercício</h1>
+	<hr>
+	<div id="root">
+		
+	</div>
+		<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+        <script type="text/babel">
+	    class App extends React.Component {
+
+	    constructor(){
+	     super()
+	     this.state = {
+	     nome1 : "Magda",
+	     nome2 : "Tainy",
+	     nome3 : "Barbie"
+	 }
+        this.button_click1 = this.button_click1.bind(this),
+        this.button_click2 = this.button_click2.bind(this),
+        this.button_click3 = this.button_click3.bind(this)
+	}
+
+	button_click1 = () => {
+	 this.setState({nome1 : "Michel"})
+	}
+	
+	button_click2(){
+	 this.setState({nome2 : "Tania"})
+	}
+	
+	button_click3(){
+	 this.setState({nome3 : "Branquinho"})
+	}
+	
+	     render(){
+	     return (
+           <div>
+              <p>Nome: {this.state.nome1} </p>
+              <button onClick={this.button_click1}> Alterar</button>
+
+              <p>Nome: {this.state.nome2}</p>
+              <button onClick={this.button_click2}> Alterar</button>
+
+              <p>Nome: {this.state.nome3}</p>
+              <button onClick={this.button_click3}> Alterar</button>
+           </div>
+	      )
+	 }
+	}
+
+	ReactDOM.render(
+          <App/>, 
+          document.getElementById('root')
+          )
+	    </script>
+	
+</BODY>
+</HTML>

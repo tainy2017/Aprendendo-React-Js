@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,">
+	<meta http-equiv="x-UA-Compatible" content="ie=">
+	<title>Aula 8</title>
+  <style type="text/css">
+    .cor_texto{
+      color: red;
+    }
+  </style>
+</head>
+<body>
+		<div id="root"></div>
+		<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+        <script type="text/babel">
+          
+          class Identificacao extends React.Component {
+           constructor(){
+           super()
+           this.state = {
+           nome = "Joao Ribeiro",
+           idade = 46
+         }
+         }
+           render(){
+             return(
+               <div>
+                <Nome nome = {this.state.nome}/>
+                <Idade idade= {this.state.idade}/>
+               </div>)
+         }
+        }
+      }
+       class Nome extends React.Component {
+
+           render(){
+             return(
+               <div>
+                <p>Nome: {this.props.nome} </p>
+               </div>)
+         }
+        }
+      }
+class Idade extends React.Component {
+
+           render(){
+             return(
+               <div>
+                <p>Idade: {this.props.idade}</p>
+               </div>)
+         }
+        }
+      }
+          ReactDOM.render(
+          <Identificacao/>, 
+          document.getElementById('root')
+          )
+        
+
+        </script>
+</body>
+</html>
